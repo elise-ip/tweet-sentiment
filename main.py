@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query
 from pydantic import Required
 import uvicorn
 from sentiment_results import settings
@@ -13,7 +13,7 @@ app = FastAPI(
 )
 
 @app.post('/sentiment/tweet')
-def detect_anomaly(
+def detect_sentiment(
     tweet: str = Query(default=Required, description=""),
     ):
     """
