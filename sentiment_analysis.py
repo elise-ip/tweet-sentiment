@@ -1,12 +1,17 @@
-import pandas as pd
-
+import pickle
 from sentiment_results import settings
 
-class SentimentAnalysis:
+class PredictSentiment:
     """"""
-    def __init__(self, twitter_train=settings.TWITTER_TRAINING, twitter_val=settings.TWITTER_VALIDATION):
-        self.twitter_train = pd.read_csv(twitter_train)
-        self.twitter_val = pd.read_csv(twitter_val)
-        
-    def fn(self):
-        pass
+    def __init__(self, model_file):
+            # TODO: load svm model
+            self._model_file = model_file
+            self.svm_model = pickle.load(open("linear_svm.pkl", "rb"))
+
+            # TODO: save and load in vectorizer
+            self.vectorizer = []
+            self.tweet_vector = None
+
+    def predict(self, tweet):
+        self.tweet_vector = self.vectorizer.transform(tweet)
+        return self.svm_model.predict(self.tweet_vector)

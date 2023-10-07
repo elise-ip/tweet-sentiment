@@ -20,4 +20,6 @@ class Settings(BaseSettings):
     TWITTER_TRAIN: str = r"data\twitter_training.csv"
     TWITTER_VALIDATION: str = r"data\twitter_validation.csv"
 
+    SENTIMENT_MODEL_FILE: str = "models/lid.176.bin"
+
 settings = Settings()
