@@ -1,1 +1,2 @@
 pandas
+flake8==3.7.9
