@@ -1,7 +1,7 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, HTTPException
 from pydantic import Required
 import uvicorn
-from sentiment_results import settings
+from sentiment_result import settings
 from sentiment_analysis import PredictSentiment
 
 ps: PredictSentiment = None
@@ -19,15 +19,16 @@ app = FastAPI(
 def before_first_request():
     """Loads the fasttext models before the first request is completed"""
     global ps
-    ps = PredictSentiment(settings.SENTIMENT_MODEL_FILE)        
+    ps = PredictSentiment(settings.SENTIMENT_MODEL_FILE, settings.VECTORIZER_FILE)        
 
 @app.post('/sentiment/tweet')
 def detect_sentiment(
     tweet: str = Query(default=Required, description=""),
     ):
-    
-    ps.predict(tweet)
+    if type(tweet) != "string":
+        raise HTTPException(status_code=400, detail="Tweet input must be of type string.")
 
+    return ps.predict(tweet)
 
 
 if __name__ == '__main__':

@@ -1,9 +1,9 @@
 # tweet-sentiment
 
-### API Layer
+##### API Layer
 The project showcases how to use the FastAPI Framework as an API Layer to deploy a machine learning model locally.
 
-### Model
+##### Model
 A Support Vector Machine (SVM) is trained from a large dataset of tweets to determine the sentiment of future tweets about an identified entity. 
 
 ##### Data
