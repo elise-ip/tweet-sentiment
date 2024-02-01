@@ -25,7 +25,7 @@ def before_first_request():
 def detect_sentiment(
     tweet: str = Query(default=Required, description=""),
     ):
-    if type(tweet) != "string":
+    if type(tweet) != str:
         raise HTTPException(status_code=400, detail="Tweet input must be of type string.")
 
     return ps.predict(tweet)
@@ -33,4 +33,4 @@ def detect_sentiment(
 
 if __name__ == '__main__':
     # used for running locally
-    uvicorn.run(app, host="127.0.0.1", port=8000) 
+    uvicorn.run(app, host="127.0.0.1", port=8080) 
