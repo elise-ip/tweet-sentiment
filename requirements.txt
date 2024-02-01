@@ -1,2 +1,6 @@
 pandas
 flake8==3.7.9
+fastapi
+pydantic<2
+uvicorn
+scikit-learn
