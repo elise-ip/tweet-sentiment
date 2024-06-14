@@ -19,4 +19,6 @@ The following table depicts the performance of the SVM model to identify tweet s
 | 1 (Neutral)  | 0.93      | 0.91   | 0.92     |
 | 2 (Positive) | 0.89      | 0.92   | 0.90     |
 
-| Accuracy | 0.90 |
+| Accuracy |
+|----------|
+| 0.90     |
