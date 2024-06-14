@@ -1,12 +1,11 @@
 from typing import Dict
 from pydantic import BaseModel, BaseSettings
-from enum import Enum
 import pydantic
 
 class Settings(BaseSettings):
     app_name: str = "tweet-sentiment"
     version: str = "0.0.1"
-    description: str = """"""
+    description: str = """Locally deployed service to determine tweet sentiment"""
     contact: Dict = {
         "name": "Sentiment Analysis of Tweets",
         "url": "https://github.com/elise-ip/tweet-sentiment",
