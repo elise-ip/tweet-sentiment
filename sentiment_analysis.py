@@ -1,6 +1,7 @@
 import pickle
 import joblib
 import pandas as pd
+from sentiment_result import Meta, Category
 
 class PredictSentiment:
     """"""
@@ -14,4 +15,13 @@ class PredictSentiment:
         self.tweet_vector = self.vectorizer.transform(tweet_preproc)
         print(type(self.tweet_vector))
         return self.svm_model.predict(self.tweet_vector)
+    
+    def categorize(self, category_num: int) -> Meta:
+        if category_num == 0:
+            sentiment = Category.NEGATIVE
+        if category_num == 1:
+            sentiment = Category.NEUTRAL
+        if category_num == 2:
+            sentiment =  Category.POSITIVE
+        return sentiment
 

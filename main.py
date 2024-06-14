@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Query, HTTPException
 from pydantic import Required
 import uvicorn
-from sentiment_result import settings
+from sentiment_result import settings, SentimentResult
 from sentiment_analysis import PredictSentiment
 
 ps: PredictSentiment = None
@@ -27,8 +27,10 @@ def detect_sentiment(
     ):
     if type(tweet) != str:
         raise HTTPException(status_code=400, detail="Tweet input must be of type string.")
-
-    return ps.predict(tweet)
+    sentiment_array = ps.predict(tweet)
+    sentiment_num = sentiment_array[0]
+    sentiment_category = ps.categorize(sentiment_num)
+    return SentimentResult(category=sentiment_category)
 
 
 if __name__ == '__main__':

@@ -34,10 +34,9 @@ class Config:
 
 @pydantic.dataclasses.dataclass(config=Config)
 class Category:
-    NEUTRAL = Meta(category='neutral', description='')
-    POSITIVE = Meta(category='positive', description='')
-    NEGATIVE = Meta(category='negative', description='')
+    NEUTRAL = Meta(category='Neutral', description='Sentiment of tweet input is considered neutral.')
+    POSITIVE = Meta(category='Positive', description='Sentiment of tweet input is considered positive.')
+    NEGATIVE = Meta(category='Negative', description='Sentiment of tweet input is considered negative.')
     
 class SentimentResult(BaseModel):
-    sentiment_num: int
     category: Meta
