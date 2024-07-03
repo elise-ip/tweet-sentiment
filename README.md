@@ -7,7 +7,7 @@ This service project takes in a text tweet and determines the appropriate sentim
 | [`/data`](/data) | Data files |
 | [`/exp`](/exp) | Experiments and ad-hoc analysis, model training |
 | [`/models`](/models) | Trained models |
-| [`/src`](/src) | Source code, packages |
+| [`/src`](/src) | Source code, packages, openapi specification |
 | [`/`](/root.md) | Root project files (README, requirements, app frontend) |
 
 ### Model Training
