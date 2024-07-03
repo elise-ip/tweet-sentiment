@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Query, HTTPException
 from pydantic import Required
 import uvicorn
-from sentiment_result import settings, SentimentResult
-from sentiment_analysis import PredictSentiment
+from src.sentiment_result import settings, SentimentResult
+from src.sentiment_analysis import PredictSentiment
 
 ps: PredictSentiment = None
 

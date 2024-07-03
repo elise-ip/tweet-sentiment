@@ -22,3 +22,12 @@ The following table depicts the performance of the SVM model to identify tweet s
 | Accuracy |
 |----------|
 | 0.90     |
+
+### Layout
+| Folder | Description |
+| --- | --- |
+| [`/data`](/data) | Data files |
+| [`/exp`](/exp) | Experiments and ad-hoc analysis, model training |
+| [`/models`](/models) | Trained models |
+| [`/src`](/src) | Source code, packages |
+| [`/`](/root.md) | Root project files (README, requirements, app frontend) |
